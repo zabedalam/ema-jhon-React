@@ -6,8 +6,15 @@ import "./Shop.css";
 const Shop = () => {
   // console.log(fakeData)
   const firstTenData = fakeData.slice(0, 10);
-    console.log(firstTenData);
+  console.log(firstTenData);
   const [products, setProducts] = useState(firstTenData);
+  const [cart,setCart]=useState([])
+
+  const handleAddProducts = product => {
+    console.log("Product added", product);
+    const newCart=[...cart,product]
+    setCart(newCart)
+  };
 
   return (
     <div className="shop-container">
@@ -18,11 +25,16 @@ const Shop = () => {
           ))}
         </ul> */}
         {products.map(product => (
-          <Product product={product} key={product.key}></Product>
+          <Product
+            product={product}
+            key={product.key}
+            handleAddProducts={handleAddProducts}
+          ></Product>
         ))}
       </div>
       <div className="cart-container">
         <h1>This is cart</h1>
+        <h4>Order Summary:{cart.length}</h4>
       </div>
     </div>
   );

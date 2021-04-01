@@ -15,3 +15,11 @@
 .product-detail {
   margin-left: 5px;
 }
+
+.btn-main{
+    background-color:goldenrod;
+    width:150px;
+    height: 30px;
+    border:1px solid gray;
+    border-radius: 5px;
+}
