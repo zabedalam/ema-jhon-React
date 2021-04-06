@@ -27,6 +27,7 @@ const Shop = () => {
         </ul> */}
         {products.map(product => (
           <Product
+            showAddToCart={true}
             product={product}
             key={product.key}
             handleAddProducts={handleAddProducts}
